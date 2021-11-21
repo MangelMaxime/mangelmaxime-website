@@ -1,0 +1,13 @@
+{
+    "css.validate": false,
+    "tailwindCSS.experimental.classRegex": [
+        "\\.className\\s+\"([^\"]*)\"",
+        [
+            "\\.className\\s+\\[([^\\]]*)\\]",
+            "\"([^\"]*)\""
+        ]
+    ],
+    "tailwindCSS.includeLanguages": {
+        "fsharp": "html"
+    }
+}

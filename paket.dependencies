@@ -1,0 +1,10 @@
+source https://api.nuget.org/v3/index.json
+
+storage: none
+framework: netstandard2.0
+
+nuget FSharp.Core ~> 5 redirects: force
+nuget Feliz
+nuget Fable.Core
+nuget Thoth.Json
+nuget Nacara.Core 1.2.0

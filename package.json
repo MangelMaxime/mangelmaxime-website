@@ -1,0 +1,33 @@
+{
+    "version": "0.0.0",
+    "private": true,
+    "type": "module",
+    "engines": {
+        "node": "^12.20.0 || ^14.13.1 || >=16.0.0",
+        "npm": ">=7.0.0"
+    },
+    "scripts": {
+        "build": "nacara build",
+        "clean": "nacara clean",
+        "watch-nacara": "nodemon --watch dist --delay 150ms --exec \"nacara watch --afterClean 'npx postcss style/main.css -o docs_deploy/style.css --watch'\"",
+        "watch-fable": "cd layouts && dotnet fable --outDir dist --watch",
+        "start-daemons": "concurrently -p none 'npm:watch-*'",
+        "watch": "dotnet fable layouts/Layouts.fsproj --outDir dist --watch --run npm run start-daemons",
+        "serve": "nacara serve"
+    },
+    "devDependencies": {
+        "@babel/preset-react": "^7.16.0",
+        "@babel/register": "^7.16.0",
+        "autoprefixer": "^10.4.0",
+        "concurrently": "^6.4.0",
+        "gatsby-remark-vscode": "^3.3.0",
+        "nacara": "^1.4.1",
+        "nacara-layout-standard": "^1.2.1",
+        "nodemon": "^2.0.15",
+        "postcss": "^8.3.11",
+        "postcss-cli": "^9.0.2",
+        "tailwindcss": "^2.2.19",
+        "unified": "^10.1.1",
+        "vscode-theme-onelight": "github:akamud/vscode-theme-onelight"
+    }
+}

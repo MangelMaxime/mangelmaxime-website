@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Slab');
+
+.tags span:not(:last-child)::after {
+    content: "\00A0" "\002C" "\00A0";
+}
+
+/* .example-post {
+    position: relative;
+}
+
+.example-post:before {
+    content: "";
+    display: block;
+    background: linear-gradient(to right top, #03A9F4 0%, #03A9F4 50%, white 50%);
+    height: calc(100% - 100vh + 6px);
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.example-post:after {
+    content: "";
+    display: block;
+    background: red;
+    height: calc(100vh - 6px);
+    width: 100%;
+    position: -webkit-sticky;
+    position: sticky;
+    bottom: 0;
+    left: 0;
+}
+
+.entry-content {
+    position: relative;
+    z-index: 1;
+    margin-bottom: calc(-100vh + 6px);
+}
+*/

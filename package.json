@@ -7,9 +7,12 @@
         "npm": ">=7.0.0"
     },
     "scripts": {
+        "postinstall": "dotnet tool restore",
         "build": "nacara build",
         "clean": "nacara clean",
-        "watch-nacara": "nodemon --watch dist --delay 150ms --exec \"nacara watch --afterClean 'npx postcss style/main.css -o docs_deploy/style.css --watch'\"",
+        "nodemon-exec": "npx nacara watch --afterClean \"npx postcss style/main.css -o docs_deploy/style.css --watch\"",
+        "//": "I need to put the nodemon exec command as a script because Windows doesn't understand single quote as a string in the commands",
+        "watch-nacara": "nodemon --watch dist --delay 150ms --exec \"npm run nodemon-exec\"",
         "watch-fable": "cd layouts && dotnet fable --outDir dist --watch",
         "start-daemons": "concurrently -p none 'npm:watch-*'",
         "watch": "dotnet fable layouts/Layouts.fsproj --outDir dist --watch --run npm run start-daemons",
@@ -21,7 +24,7 @@
         "autoprefixer": "^10.4.0",
         "concurrently": "^6.4.0",
         "gatsby-remark-vscode": "^3.3.0",
-        "nacara": "^1.4.1",
+        "nacara": "^1.4.2",
         "nacara-layout-standard": "^1.2.1",
         "nodemon": "^2.0.15",
         "postcss": "^8.3.11",

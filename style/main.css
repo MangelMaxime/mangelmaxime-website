@@ -4,6 +4,10 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Slab');
 
+.page-content {
+    flex: 1 0 auto;
+}
+
 .tags span:not(:last-child)::after {
     content: "\00A0" "\002C" "\00A0";
 }

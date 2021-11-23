@@ -3,14 +3,29 @@ module Page
 open Nacara.Core.Types
 open Feliz
 
+let private navbar =
+    Html.div [
+        prop.className "py-8 z-10"
 
-            // <head>
-            //     <meta charSet="UTF-8" />
-            //     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-            //     <link href="/style.css" rel="stylesheet" />
-            //     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-            //     <title>{pageContext.title}</title>
-            // </head>
+        prop.children [
+            Html.div [
+                prop.className "container px-6"
+
+                prop.children [
+                    Html.div [
+                        prop.className "flex items-center justify-between"
+
+                        prop.children [
+                            Html.div [
+                                prop.className "text-2xl"
+                                prop.text "Fable Adventure"
+                            ]
+                        ]
+                    ]
+                ]
+            ]
+        ]
+    ]
 
 let render
     (rendererContext : RendererContext)
@@ -55,10 +70,29 @@ let render
         ]
 
         Html.body [
-            prop.className "flex flex-col bg-gray-100 font-serif"
+            prop.className "flex flex-col bg-gray-100 font-serif min-h-screen"
 
             prop.children [
-                Html.text "maxim22e"
+                navbar
+
+                Html.div [
+                    prop.className "page-content"
+                    prop.children [
+                        content
+                    ]
+                ]
+
+                Html.div [
+                    prop.className "flex-shrink-0 h-32 mt-4 bg-gray-800"
+
+                    prop.children [
+                        Html.div [
+                            prop.className "container text-center text-white"
+
+                            prop.text "© 2021 Copyright by Mangel Maxime . All rights reserved."
+                        ]
+                    ]
+                ]
 
                 if true then
                     Html.script [

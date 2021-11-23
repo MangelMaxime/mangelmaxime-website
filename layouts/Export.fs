@@ -28,6 +28,10 @@ exportDefault
                 Name = "index"
                 Func = render
             }
+            {
+                Name = "tutorial"
+                Func = Tutorial.render
+            }
         |]
         Dependencies = [| |]
     }
